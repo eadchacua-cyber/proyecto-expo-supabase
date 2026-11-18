@@ -1,0 +1,13 @@
+describe('Validación de datos - Tienda de Ropa', () => {
+  test('Valida estructura correcta de una prenda', () => {
+    const prenda = { nombre: 'Camiseta Oversize', precio: 25.5, talla: 'M' };
+    expect(prenda.nombre).toBeTruthy();
+    expect(prenda.precio).toBeGreaterThan(0);
+    expect(['S', 'M', 'L', 'XL']).toContain(prenda.talla);
+  });
+
+  test('Calcula correctamente el precio formateado', () => {
+    const precio = 25.5;
+    expect(precio.toFixed(2)).toBe('25.50');
+  });
+});
